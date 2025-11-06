@@ -9,6 +9,10 @@ class Heap {
     this.array = [];
   }
 
+  /**
+   * To add an element, just add it to the end, then bubble up. Compare the value only to the
+   * parent and swap if it is less than the parent.
+   */
   add(num: number) {
     if (this.array.length === 0) {
       this.array.push(num);
@@ -35,6 +39,10 @@ class Heap {
     }
   }
 
+  /**
+   * To remove, replace that element with the last element. Then bubble down the element in its place.
+   * When comparing to both children, choose the child that is less overall and swap with the current.
+   */
   remove(index: number) {
     if (this.array[index] === undefined) throw "Element not found";
 
